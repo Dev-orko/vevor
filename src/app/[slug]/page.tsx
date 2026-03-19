@@ -4,6 +4,39 @@ import Footer from "@/components/Footer";
 import { products } from "@/lib/products";
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const product = products.find((p) => p.id === slug);
+
+  if (!product) {
+    return { title: "Product Not Found" };
+  }
+
+  return {
+    title: product.name,
+    description: `Purchase ${product.name} for just €${product.price}. Instant delivery and fully secured.`,
+    openGraph: {
+      title: `${product.name} | VEVOR STORE`,
+      description: `Purchase ${product.name} for just €${product.price}. Instant delivery and fully secured.`,
+      images: [
+        {
+          url: product.image,
+          width: 800,
+          height: 600,
+          alt: product.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.name} | VEVOR STORE`,
+      description: `Purchase ${product.name} for just €${product.price} instantly.`,
+      images: [product.image],
+    },
+  };
+}
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

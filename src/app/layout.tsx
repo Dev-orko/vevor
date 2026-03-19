@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
 import { PurpleDust } from "@/components/PurpleDust";
 import Script from "next/script";
@@ -14,9 +14,43 @@ const headingFont = Playfair_Display({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  themeColor: "#8b5cf6",
+};
+
 export const metadata: Metadata = {
-  title: "VEVOR STORE",
-  description: "Premium digital goods storefront experience built with Next.js and Tailwind CSS.",
+  metadataBase: new URL("https://vevorstore.cc"),
+  title: {
+    default: "VEVOR STORE",
+    template: "%s | VEVOR STORE",
+  },
+  description: "Your trusted source for premium digital services like Discord enhancements, streaming accounts, and more. Quality, speed, and security in every transaction.",
+  openGraph: {
+    title: "VEVOR STORE | Premium Digital Services",
+    description: "Your trusted source for premium digital services. Quality, speed, and security in every transaction.",
+    url: "https://vevorstore.cc",
+    siteName: "VEVOR STORE",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://vevorstore.cc/logo.png",
+        width: 512,
+        height: 512,
+        alt: "VEVOR STORE Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "VEVOR STORE | Premium Digital Services",
+    description: "Your trusted source for premium digital services. Quality, speed, and security in every transaction.",
+    images: ["https://vevorstore.cc/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
