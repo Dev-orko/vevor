@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
 import { PurpleDust } from "@/components/PurpleDust";
+import Script from "next/script";
 import "./globals.css";
 
 const bodyFont = Manrope({
@@ -44,6 +45,16 @@ export default function RootLayout({
         <div className="relative z-10 flex flex-col flex-1">
           {children}
         </div>
+        
+        {/* Cloudflare Web Analytics (Browser Insights) */}
+        {process.env.NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN && (
+          <Script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={`{"token": "${process.env.NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN}"}`}
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );

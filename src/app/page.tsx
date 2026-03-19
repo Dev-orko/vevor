@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import FaqItem from "@/components/FaqItem";
+import { products } from "@/lib/products";
 
 const trustPoints = [
   {
@@ -67,27 +68,6 @@ function TrustIcon({ icon }: { icon: "shield" | "headset" | "wallet" | "bolt" })
     </svg>
   );
 }
-
-const products = [
-  { name: "Cheap Discord Nitro Month", price: "4.80", image: "https://vevorstore.cc/images/nitro1m.gif" },
-  { name: "Cheap Discord Nitro Year", price: "39.99", image: "https://vevorstore.cc/images/nitro1y.gif" },
-  { name: "Cheap Discord Decorations / Effects", price: "2.49", image: "https://vevorstore.cc/images/deco.gif" },
-  { name: "Cheap Discord Nameplates", price: "2.79", image: "https://vevorstore.cc/images/nameplate.gif" },
-  { name: "Cheap Discord Server Boosts", price: "8.30", image: "https://vevorstore.cc/images/bst.gif" },
-  { name: "Cheap Discord Members", price: "0.79", image: "https://vevorstore.cc/images/members.gif" },
-  { name: "Cheap Spotify Premium", price: "3.00", image: "https://vevorstore.cc/images/spotify.gif" },
-  { name: "Cheap Deezer Premium", price: "3.99", image: "https://vevorstore.cc/images/deezer.gif" },
-  { name: "Cheap Netflix Premium", price: "4.99", image: "https://vevorstore.cc/images/netflix.gif" },
-  { name: "Cheap Crunchyroll Premium", price: "3.99", image: "https://vevorstore.cc/images/crunchy.gif" },
-  { name: "Cheap ChatGPT Premium", price: "4.99", image: "https://vevorstore.cc/images/chatgpt.gif" },
-  { name: "Cheap Perplexity AI Premium", price: "9.99", image: "https://vevorstore.cc/images/perplexity.gif" },
-  { name: "Cheap Youtube Premium", price: "3.99", image: "https://vevorstore.cc/images/ytpremium.gif" },
-  { name: "Cheap Youtube Music Premium", price: "23.99", image: "https://vevorstore.cc/images/ytmusic.gif" },
-  { name: "Cheap Canva Pro", price: "2.99", image: "https://vevorstore.cc/images/canva.gif" },
-  { name: "Cheap Amazon Prime Video", price: "4.99", image: "https://vevorstore.cc/images/prime.gif" },
-  { name: "Cheap GeoGuessr", price: "4.49", image: "https://vevorstore.cc/images/geo.gif" },
-  { name: "Cheap Medal TV", price: "4.49", image: "https://vevorstore.cc/images/medal.gif" },
-];
 
 const faqs = [
   "How to purchase?",

@@ -1,6 +1,9 @@
+import Link from "next/link";
+
 /* eslint-disable @next/next/no-img-element */
 type ProductCardProps = {
   product: {
+    id: string;
     name: string;
     price: string;
     image: string;
@@ -37,8 +40,8 @@ const ProductCard = ({ product, index }: ProductCardProps) => (
           &euro;{product.price}
         </span>
       </div>
-      <a
-        href="#"
+      <Link
+        href={`/${product.id}`}
         className="cta-violet cta-violet-compact group/btn relative isolate mt-2 inline-flex w-full items-center justify-center overflow-hidden rounded-full shadow-[0_4px_14px_-6px_rgba(167,86,255,0.4)]"
       >
         <span className="relative z-10 flex items-center gap-2">
@@ -48,7 +51,7 @@ const ProductCard = ({ product, index }: ProductCardProps) => (
           </svg>
         </span>
         <span aria-hidden="true" className="cta-violet-glow" />
-      </a>
+      </Link>
     </div>
   </article>
 );
