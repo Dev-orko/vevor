@@ -16,21 +16,21 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <Header />
-      <main className="relative z-10 flex flex-col min-h-screen pt-32 pb-24">
+      <main className="relative z-10 flex-1 flex flex-col pt-36 pb-12">
         {/* Background ambient light */}
-        <div className="absolute top-1/4 left-1/2 -mt-64 -ml-64 h-[32rem] w-[32rem] rounded-full bg-violet-600/10 blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -mt-32 -ml-64 h-[32rem] w-[32rem] rounded-full bg-violet-600/10 blur-[120px] pointer-events-none" />
 
-        <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 flex-1 flex flex-col">
           
           {/* Breadcrumb / Back */}
-          <Link href="/#products" className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-violet-400 transition-colors mb-10">
+          <Link href="/#products" className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-violet-400 transition-colors mb-8">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
             Back to Store
           </Link>
 
-          <div className="grid lg:grid-cols-[1fr_400px] gap-12 lg:gap-16">
+          <div className="grid lg:grid-cols-[1fr_400px] gap-10 lg:gap-16 items-start">
             
             {/* Left Col: Info */}
             <div className="space-y-8">
